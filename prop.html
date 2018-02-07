@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>prop方法</title>
+</head>
+<body>
+<input type="button" value="选择" >
+<input type="button" value="取消">
+<input type="checkbox">
+
+
+<script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.12.4/jquery.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('input').eq(0).click(function(){
+			// $('input').eq(2).attr('checked',true);
+			$('input').eq(2).prop('checked',true);
+		});
+
+		$('input').eq(1).click(function(){
+			$('input').eq(2).prop('checked',false);
+		});
+	});
+	
+</script>
+</body>
+</html>
