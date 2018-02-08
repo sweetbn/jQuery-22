@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>手风琴动画案例</title>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		.wrap{
+			width: 1000px;
+			height: 400px;
+			margin: 100px auto;
+			background-color: pink;
+			overflow: hidden;
+		}
+		ul{
+			list-style: none;
+			/*position: relative;*/
+		}
+		ul li{
+			text-decoration: none;
+			display: block;
+			width: 200px;
+			height: 400px;
+			/*position: absolute;*/
+			float: left;
+			cursor: pointer;
+			overflow: hidden;
+		}
+	</style>
+</head>
+<body>
+<div class="wrap">
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</div>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.12.4/jquery.js"></script>
+
+<script type="text/javascript">
+	$(function(){
+		for (var i = 0; i < $('li').length; i++) {
+			$('li').eq(i).css('backgroundImage','url(img/'+(i+1)+'.jpg)');
+		}
+
+		$('li').mouseenter(function(){
+			// $(this).css('width','600px').siblings().css('width','100px');
+			$(this).stop().animate({width:600}).siblings().stop().animate({width:100});
+		}).mouseleave(function(){
+			$('li').stop().animate({width:200});
+		});
+	});
+</script>
+</body>
+</html>
