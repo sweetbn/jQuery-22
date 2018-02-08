@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>表格全选</title>
+
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		.wrap{
+			width: 500px;
+			height: 500px;
+			margin: 100px auto;
+			text-align: center;
+		}
+		.wrap table{
+			width: 300px;
+			/*border: 1px solid #000;*/
+			box-sizing: border-box;
+			border-spacing: 0;
+		}
+		th,td{
+			border: 1px solid #eee;
+			padding: 10px;
+		}
+
+		.wrap table thead tr{
+			height: 40px;
+			background-color: pink;
+			color: #fff;
+			font: bold 16px '微软雅黑';
+		}
+
+		.wrap tbody tr{
+			height: 35px;
+			background-color: #ddd;
+			font:14px '微软雅黑';
+		}
+		.wrap tbody tr:hover{
+			background-color: #eee;
+		}
+	</style>
+</head>
+<body>
+<div class="wrap">
+	<table>
+		<thead>
+			<tr>
+				<th><input type="checkbox" id="cball"></th>
+				<th>菜名</th>
+				<th>饭店</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><input type="checkbox"></td>
+				<td>红烧肉</td>
+				<td>快餐店</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox"></td>
+				<td>西红柿炒蛋</td>
+				<td>快餐店</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox"></td>
+				<td>干锅花菜</td>
+				<td>快餐店</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox"></td>
+				<td>黄焖鸭</td>
+				<td>快餐店</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.12.4/jquery.js"></script>
+
+<script type="text/javascript">
+	$(function(){
+		$('#cball').click(function(){
+			$('tbody input').prop('checked',$(this).prop('checked'));
+		});
+		$('tbody input').click(function(){
+			if($('tbody input:checked').length==$('tbody input').length)
+			{
+				$('#cball').prop('checked',true);
+			}
+			else{
+				$('#cball').prop('checked',false);
+			}
+		});
+	});
+</script>
+</body>
+</html>
