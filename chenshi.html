@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>城市选择案例</title>
+	<style type="text/css">
+		*{
+			padding:0;
+			margin: 0;
+		}
+		#src-city,#tar-city{
+			width: 200px;
+			height: 200px;
+			background-color: pink;
+			float: left;
+		}
+		#btn{
+			height: 200px;
+			width: 40px;
+			float: left;
+		}
+		#btn button{
+			display: block;
+			padding: 5px;
+		}
+	</style>
+</head>
+<body>
+<div class="wrap">
+	<h1>城市选择：</h1>
+	<select id="src-city" multiple>
+		<option value="1">南京</option>
+		<option value="2">上海</option>
+		<option value="3">深圳</option>
+		<option value="4">无锡</option>
+	</select>
+
+	<div id="btn">                 
+		<button id="btn1">&gt&gt&gt</button>
+		<button id="btn2">&lt&lt&lt</button>
+		<button id="btn3">&gt</button>
+		<button id="btn4">&lt</button>
+	</div>
+
+	<select id="tar-city" multiple>
+		
+	</select>
+</div>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.12.4/jquery.js"></script>
+
+<script type="text/javascript">
+	$(function(){
+		$('#btn1').click(function(){
+			$('#src-city option').appendTo('#tar-city');
+		});
+		$('#btn2').click(function(){
+			$('#src-city').append($('#tar-city option'));
+		});
+		
+		$('#btn3').click(function(){
+			$('#src-city option:selected').appendTo('#tar-city');
+		});
+		$('#btn4').click(function(){
+			// $('#src-city option:selected').appendTo('#tar-city');
+			$('#src-city').append($('#tar-city option:selected'));
+		});
+		
+	});
+</script>
+</body>
+</html>
