@@ -1,0 +1,5 @@
+attr()修改属性,但是属性为布尔值（例如CheckBox的checked:false）的时候用prop
+normalize进行css样式初始化保留ul等的基本样式，而CSS reset则全部进行初始化
+
+
+first-child第一个 其他nth-child（odd）
